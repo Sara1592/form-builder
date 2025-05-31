@@ -66,7 +66,7 @@ export default function DynamicForm() {
     //   <div className="text-center p-10 text-lg">
     //     No form schema found. Please create one in <code>/admin/builder</code>
     //   </div>
-    <div className="text-center p-10 text-lg">
+    <div className="text-center p-10 text-[34px] font-semibold">
   No form schema found. Please create one in{" "}
   <Link href="/admin/builder">
     <code className="text-blue-600 underline hover:text-blue-800">/admin/builder</code>
