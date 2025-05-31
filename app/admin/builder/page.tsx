@@ -33,17 +33,17 @@ export default function FormBuilderPage() {
     <div className="p-6 max-w-xl mx-auto">
       <h2 className="text-2xl font-bold mb-4 text-center">Form Builder</h2>
 
-      <div className="space-y-3 mb-6">
+      <div className="space-y-3 mb-6 bg-[#fdf4f4] rounded-2xl px-5 py-7">
         <input
           type="text"
           placeholder="Field Label"
-          className="border px-4 py-2 w-full rounded"
+          className="border px-4 py-2 w-full rounded block font-semibold text-[18px] mb-4 text-[#4F4C4C]"
           value={field.label}
           onChange={(e) => setField({ ...field, label: e.target.value })}
         />
 
         <select
-          className="border px-4 py-2 w-full rounded"
+          className="border px-4 py-2 w-full rounded block font-semibold text-[18px] mb-4 text-[#4F4C4C]"
           value={field.type}
           onChange={(e) => setField({ ...field, type: e.target.value as FormField["type"] })}
         >
@@ -59,12 +59,12 @@ export default function FormBuilderPage() {
             checked={field.required}
             onChange={(e) => setField({ ...field, required: e.target.checked })}
           />
-          <span>Required</span>
+          <span className="text-[18px] text-[#4F4C4C]">Required</span>
         </label>
 
         <button
           onClick={addField}
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+          className="bg-[#0e2766] text-amber-50 hover:bg-[#f8c418]   hover:text-[#0e2766] text-[18px] font-bold py-2 px-6 rounded-md mb-6 cursor-pointer"
         >
           Add Field
         </button>
@@ -72,10 +72,10 @@ export default function FormBuilderPage() {
 
       {fields.length > 0 && (
         <div className="mb-4">
-          <h3 className="text-lg font-semibold mb-2">Current Fields:</h3>
+          <h3 className="text-2xl font-bold mb-4 text-center">Current Fields</h3>
           <ul className="space-y-1">
             {fields.map((f, i) => (
-              <li key={i} className="border p-2 rounded">
+              <li key={i} className="border p-2 mb-5 rounded">
                 {f.label} ({f.type}) {f.required && "*"}
               </li>
             ))}
@@ -86,15 +86,17 @@ export default function FormBuilderPage() {
       <div className="flex gap-4">
         <button
           onClick={saveSchema}
-          className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600"
+          className="bg-[#f8c418] font-semibold text-[20px] text-[#0e2766] px-4 py-2 rounded-[10px] hover:bg-white hover:text-[#0e2766] cursor-pointer"
         >
           Save Form Schema
         </button>
         <button
           onClick={goToDynamicForm}
-          className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900"
+        //   className="bg-gray-800 text-white px-4 py-2 rounded hover:bg-gray-900"
+                  className="bg-[#f8c418] font-semibold text-[20px] text-[#0e2766] px-4 py-2 rounded-[10px] hover:bg-white hover:text-[#0e2766] cursor-pointer"
+
         >
-          Go to Form
+          User Form
         </button>
       </div>
     </div>
